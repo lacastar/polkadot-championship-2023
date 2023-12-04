@@ -1,0 +1,30 @@
+{
+  "name": "polkai-api",
+  "version": "0.0.1",
+  "description": "polkai APIs for blockchain interaction called by GPT",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lacastar/polkadot-championship-2023.git"
+  },
+  "keywords": [
+    "Vara",
+    "Polkadot",
+    "AI",
+    "ChatGPT",
+    "API"
+  ],
+  "author": "lacastar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lacastar/polkadot-championship-2023/issues"
+  },
+  "homepage": "https://github.com/lacastar/polkadot-championship-2023#readme",
+  "dependencies": {
+    "@gear-js/api": "^0.35.2",
+    "@polkadot/api": "^10.11.1"
+  }
+}

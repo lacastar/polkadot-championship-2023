@@ -1,0 +1,985 @@
+
+
+
+
+
+Vara Network Documentation Portalfunction insertBanner(){var n=document.createElement("div");n.id="__docusaurus-base-url-issue-banner-container";n.innerHTML='\n<div id="__docusaurus-base-url-issue-banner" style="border: thick solid red; background-color: rgb(255, 230, 179); margin: 20px; padding: 20px; font-size: 20px;">\n   <p style="font-weight: bold; font-size: 30px;">Your Docusaurus site did not load properly.</p>\n   <p>A very common reason is a wrong site <a href="https://docusaurus.io/docs/docusaurus.config.js/#baseUrl" style="font-weight: bold;">baseUrl configuration</a>.</p>\n   <p>Current configured baseUrl = <span style="font-weight: bold; color: red;">/</span>  (default value)</p>\n   <p>We suggest trying baseUrl = <span id="__docusaurus-base-url-issue-banner-suggestion-container" style="font-weight: bold; color: green;"></span></p>\n</div>\n',document.body.prepend(n);var e=document.getElementById("__docusaurus-base-url-issue-banner-suggestion-container"),s=window.location.pathname,o="/"===s.substr(-1)?s:s+"/";e.innerHTML=o}document.addEventListener("DOMContentLoaded",(function(){void 0===window.docusaurus&&insertBanner()}))
+window.dataLayer=window.dataLayer||[]
+!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-NH2N6VX",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")
+
+
+
+
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NH2N6VX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+
+!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())Skip to main contentReady to build on the edge of Web3? Join Vara online hackathon -  Gear upDocsVara-network.ioGear-tech.ioContributeVara Networkdocumentation portalAll documentation related to Vara NetworkDiscover VaraStart developingAre you developer? Start building a new generation of Web3 applications right now.Learn moreBecome a ValidatorProvide computing resources to keep the Vara Network secure, performant and censorship-resistant. It is not only a responsibility, but also a good reward.Learn moreBecome a NominatorHelp maintain the network security by participating as a nominator. Stake your VARA and get reward!Learn moreExplore Vara`s Token EconomyLearn how it is strategically designed to build long-term network resilience, foster ecosystem growth, and deliver lasting benefits.Learn more
+
+
+
+
+
+
+
+
+Run Vara Validator | Vara Network Documentation Portal
+window.dataLayer=window.dataLayer||[]
+!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-NH2N6VX",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")
+
+
+
+
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NH2N6VX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+
+!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())Skip to main contentReady to build on the edge of Web3? Join Vara online hackathon -  Gear upDocsVara-network.ioGear-tech.ioContributeGetting StartedAbout VaraVara Token EconomyAccountBuilding Smart ContractsStakingStaking OverviewBecome NominatorBecome ValidatorValidator FAQsGovernanceStakingBecome ValidatorOn this pageRun Vara ValidatorValidators are essential contributors to a successful blockchain network. When chosen to be part of a validator set, they help produce blocks and receive rewards for their investments in the platform.
+Holding such responsibility requires careful commitment from each validator because of personal and nominator stakes that may be at risk; however, working as a network validator is also highly rewarding!
+Hardware requirements​
+infoBeginners can start their validator setup on Linux-based cloud servers. Select the VPS provider that best meets the requirements below to maximize performance and run securely.
+
+OS: Ubuntu 20.04 or later, Amazon Linux 2 or later
+CPU: 4vCPUs @ 3.4GHz; (it coud be Intel Ice Lake, Xeon or Core series, even AMD Zen3)
+Memory: 16GB RAM
+Storage: minimum 160GB SSD storage. Should be increased as the blockchain grows.
+
+Initial Set Up​
+Install Vara Node​
+Download the latest stable release of the gear node from the builds repo and unpack (choose the binary according to your host operating system):
+Windows x64MacOS ARMMacOS x64Linux x64Terminal:curl -O https://get.gear.rs/gear-v1.0.2-x86_64-pc-windows-msvc.ziporWindows x64: gear-v1.0.2-x86_64-pc-windows-msvc.zipUnzip the downloaded package then you can try to run the node:❯ gear.exe --versiongear.exe 1.0.2-d02d306f97cTerminal:curl https://get.gear.rs/gear-v1.0.2-aarch64-apple-darwin.tar.xz | tar xJormacOS M1/M2: gear-v1.0.2-aarch64-apple-darwin.tar.xzYou can try to run the node:❯ ./gear --versiongear 1.0.2-d02d306f97cTerminal:curl https://get.gear.rs/gear-v1.0.2-x86_64-apple-darwin.tar.xz | tar xJormacOS Intel x64: gear-v1.0.2-x86_64-apple-darwin.tar.xzYou can try to run the node:❯ ./gear --versiongear 1.0.2-d02d306f97cTerminal:curl https://get.gear.rs/gear-v1.0.2-x86_64-unknown-linux-gnu.tar.xz | tar xJorLinux x64: gear-v1.0.2-x86_64-unknown-linux-gnu.tar.xzYou can try to run the node:❯ ./gear --versiongear 1.0.2-d02d306f97c
+Run Vara node as service​
+Copy the gear executable to the /usr/bin directory:
+sudo cp gear /usr/bin
+To run the Gear node as one of the Linux services, you need to configure the systemd file:
+cd /etc/systemd/systemsudo nano vara-node.service
+Configure and save:
+[Unit]Description=Vara NodeAfter=network.target[Service]Type=simpleUser=rootGroup=rootExecStart=/usr/bin/gear \    --chain vara  \    --rpc-cors all \    --name "VALIDATOR_NAME" \    --telemetry-url "wss://telemetry.rs/submit 1" \    --validatorRestart=alwaysRestartSec=3LimitNOFILE=10000[Install]WantedBy=multi-user.target
+noteDeclaration ExecStart points to the location of the gear binary file. In this case, it is in /usr/bin directory.
+The example is configured to run the service from the root user.
+Save & Exit.
+That’s it. Now we can start the service.
+sudo systemctl start vara-node.service
+Syncing the Blockchain​
+If you follow all the instructions, the node will require time to synchronize with the blockchain.
+To check the service status in real time use:
+sudo journalctl --follow -u vara-node.service
+You can also see your running node in telemetry portal: https://telemetry.rs
+Create Stash and Controller accounts​
+We recommend creating two accounts: Stash and Controller, for security reasons. Ensure each of them has enough funds to pay the transaction fee. Store most of the funds on the Stash accounts, which are the optimal location for saving staking funds safely and securely.
+Use the prompt to generate a new seed phrase:
+./gear key generate --network vara
+noteSave both seed phrases in a secure place. Skip the previous step if you intend to use your seed phrase. If you want to use your seed phrase, skip this step. You can use Polkadot.{js} or Polkadot extension
+Get session keys​
+You need to tell the chain your Session keys. If you are on a remote server, it is easier to run this command on the same machine (while the node is running with the default HTTP RPC port configured):
+curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933
+Output:
+{“jsonrpc”:”2.0",”result”:”0x5e977ddcc0c69a6aed067052d5bd8f6bd365fae03562fd447d434e9814ac415d7c9ffe722364922bda314e44654f5c0cdc00d152470d5433f12cb73d078061863ac769d5f17b5460f042d221edf0099d2ce4c23edbe96ac943452cc4d3ad6d72”,”id”:1}
+The output will have a hex-encoded result field. Copy and save it!
+Setup Validator​
+Once your node is live, synchronized, and appears in telemetry, and session keys are prepared, it's time to set up the validator.
+Go to Polkadot.{js} app and navigate to Network → Staking → Account actions section and click +Validator:
+Choose your stash and controller accounts and specify your stake amount. It's recommended to utilize distinct accounts both stash and controller.
+infoThe minimum self-stake required to become an active Validator is currently 100_000 VARA, but it is subject to change over time.
+
+Set the session key and reward commission.
+
+Sign the transaction. Ensure you're added to the stash account and wait for the next Era to start. Once it begins, the network will add your validator.
+
+Update Validator​
+Regularly updating your validator is critical for keeping up with current maintenance requirements.
+The fastest and simplest way to update the validator:
+
+Download the latest binary version
+Swap binaries
+Restart your service
+
+sudo systemctl start vara-node.service
+👏👏👏 Congratulations! You’ve successfully set up your validator node. 👏👏👏 If you encounter challenges or need help — reach out in the Validators Chat!Edit this pagePreviousBecome NominatorNextValidator FAQsHardware requirementsInitial Set UpInstall Vara NodeRun Vara node as serviceSyncing the BlockchainCreate Stash and Controller accountsGet session keysSetup ValidatorUpdate Validator
+
+
+
+
+
+
+
+
+Become Nominator | Vara Network Documentation Portal
+window.dataLayer=window.dataLayer||[]
+!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-NH2N6VX",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")
+
+
+
+
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NH2N6VX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+
+!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())Skip to main contentReady to build on the edge of Web3? Join Vara online hackathon -  Gear upDocsVara-network.ioGear-tech.ioContributeGetting StartedAbout VaraVara Token EconomyAccountBuilding Smart ContractsStakingStaking OverviewBecome NominatorBecome ValidatorValidator FAQsGovernanceStakingBecome NominatorOn this pageBecome NominatorNominators are passive participants in any Proof of Stake (PoS) consensus mechanism. They indirectly contribute to maintaining the health and security of the network by delegating their tokens to the most reliable validators who actively confirm blocks. Nominators receive rewards for their delegation, which depend on the network's economy and the percentage that the validator takes for themselves.
+Being a nominator does not require running your own node or worrying about online uptime.
+How to set up as a nominator​
+Via Vara Staking Dashboard​
+Vara offers a user-friendly staking dashboard, inspired by the Polkadot staking dashboard, that simplifies the process of staking and nominating validators.
+
+To begin your VARA token staking journey, visit our staking dashboard at staking.vara-network.io.
+Once on the staking dashboard, connect your account and navigate to the "Nominate" section.
+Click the Start Nominating button.
+
+
+
+
+Payout Options
+Next, you'll be presented with payout options:
+
+Compound: Rewards are automatically re-staked and bonded.
+To Your Account: Rewards are deposited into your account.
+
+Select the option that suits your preferences and click "Continue" to proceed.
+
+
+
+
+
+Nominating Validators
+Now, it's time to choose your nominations. The staking dashboard provides two methods:
+
+Automatic Optimal Selection: This feature selects validators for you based on their performance and rewards. It's an excellent option if you're unsure about which validators to nominate.
+Manual Selection: If you want more control over your nominations, opt for manual selection. Carefully choose the validators you wish to nominate. Nominating multiple validators can help diversify your risk.
+
+
+
+
+
+Define your Bond - specify amount of VARA to be staked, confirm and sign the transaction.
+
+
+Congratulations! You are now an active nominator. You will now begin earning staking rewards starting from the next era.
+Via SubWallet​
+SubWallet enables VARA staking in a few clicks. See how it's done with the example of a mobile app:
+
+Navigate to the Staking section in the SubWallet application:
+
+
+
+If you don't see Vara Network there, just use the search function—type 'Vara':
+
+
+
+Specify the amount of VARA to stake and choose up to 16 validators to Nominate. Alternatively you can opt for pool staking, in this case make sure you have filtered out only Active pools:
+
+
+
+Review the specified data and click the Approve button:
+
+
+
+That's it! You've successfully staked your VARA. The next time you enter the 'Staking' section, your staking details will be there.
+
+
+Via Polkadot.{js} app​
+Go to the Polkadot.{js} app, navigate to the Network → Staking → Accounts section, and click + Nominator:
+
+Select the stash and controller accounts, along with the amount of value you wish to bond. You can see in the screenshot what Stash and Controller accounts are. If you have not created your controller account, you can use the same one for both.
+
+
+
+Choose a validator (or validators) you'd like to nominate. You can select up to 16 validators, and the algorithm will determine how to distribute your funds effectively for each Era. It's advisable to choose only reliable validators with a good reputation to ensure they won't be slashed.
+
+
+
+Click Bond & Nominate and sign the transaction. If everything is correct, your bonded VARA will appear in the Nominators list.
+
+
+Your nominations will take effect in the next era.
+Nomination pools​
+Vara Staking Pools empower users to actively participate in the network's growth and receive rewards, regardless of their token holdings. With Staking Pools, even if a user has only 1 VARA token, they can start earning rewards by staking natively on Vara. Additionally, anyone who has 50 VARA tokens or more can create their own pool.
+These pools enable users to join forces by pooling their VARA tokens together on-chain. Through this collaborative effort, participants can nominate validators and collectively stake their tokens, significantly enhancing the network's scalability and security.
+noteFurther instructions are also valid for using this app on Laptop/Desktop devices via this link.
+Via Vara Staking Dashboard​
+
+Navigate to the 'Pools' section in the Vara Staking Dashboard and click the Join button:
+
+
+
+Select any pool you like:
+
+
+noteSelect only pools that have active nominations; staking in a pool with Not Nominating status does not yield rewards.
+
+Specify the amount of VARA to stake and click Submit:
+
+
+notePool staking rewards are not claimed automatically by default. You have to periodically check for available rewards and claim them.
+
+Congratulations! You have successfully staked VARA in the pool. You will begin earning staking rewards from the next era.
+
+
+Via Polkadot.js app using SubWallet browser as an example​
+
+If you have some VARA tokens in your account in the SubWallet mobile application, click this link to open the Polkadot.js application directly in the wallet's browser.
+
+
+
+Select the Network drop-down, and then click Staking:
+
+
+
+Choose Pools, navigate to All pools, select any desired pool, and click Join:
+
+
+
+Specify your account and the amount of VARA you wish to stake:
+
+
+
+Review the transaction details and click Sign and Submit:
+
+
+
+Approve the transaction by signing in to the Wallet application:
+
+
+
+
+Your nominations will take effect in the next era.
+You can check your stake at Pools - Own pools as well as Accounts - Pooled:
+
+
+
+Edit this pagePreviousStaking OverviewNextBecome ValidatorHow to set up as a nominatorVia Vara Staking DashboardVia SubWalletVia Polkadot.{js} appNomination poolsVia Vara Staking DashboardVia Polkadot.js app using SubWallet browser as an example
+
+
+
+
+
+
+
+
+Governance | Vara Network Documentation Portal
+window.dataLayer=window.dataLayer||[]
+!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-NH2N6VX",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")
+
+
+
+
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NH2N6VX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+
+!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())Skip to main contentReady to build on the edge of Web3? Join Vara online hackathon -  Gear upDocsVara-network.ioGear-tech.ioContributeGetting StartedAbout VaraVara Token EconomyAccountBuilding Smart ContractsStakingGovernanceGovernanceOn this pageGovernanceIntroduction​
+Vara empowers its community to decide the evolution of the network through its on-chain governance mechanism. In the interests of decentralization, longevity and flexibility, Vara leverages the widely-adopted OpenGov framework as its native governance model. This allows any VARA token holder to participate in Vara’s decentralized governance to help determine any future updates or modifications to the network.
+The goal is to ensure that Vara Network stakeholders are represented, led, and engaged in decision-making processes to collaboratively decide the direction of the network. To accomplish this, Vara establishes a clear mandate and set of values to ensure orderly discussion and execution of decisions. At its most fundamental level, Vara’s governance model ensures that stakeholders controlling at least 50% of all funds staked to the network are able to direct its future — assuming they have enough conviction in their position.
+Glossary Terms​
+
+Conviction - The amount of “weight” a vote carries. This is calculated using the number of tokens locked into a vote, plus the user-defined period of time tokens should be locked for. The longer this lock-in period, the greater conviction a vote will carry.
+Proposal - an action or item proposed by a token holder, which is open for voting and discussion by all token holders. This is tied to a specific change to the Vara network, including values for key parameters, code upgrades, or changes to the governance system itself.
+Referendum (plural: referenda) -  a proposal that has met the proposal criteria and entered from the Lead-In period to the Deciding Period. It remains open for token-holder voting for the defined time, before being checked against referendum criteria and entering the Enactment period if successful.
+Origin - a set of permissions that define the source for an operation, which is used to determine the Track that a referendum is posted under.
+Track - an Origin-specific pipeline that outlines the life cycle of proposals. Currently, there are several Tracks available, including Root, Whitelisted, General Admin, Emergency Canceller, and Emergency Killer.
+Fellowship - a group of community members who have special voting rights within the Gear protocol and can add certain proposals to the Whitelisted Track.
+Approval - the minimum "Aye" votes as a percentage of overall Conviction-weighted votes needed for an approval.
+Support - the minimum number of "Aye" votes, not taking into consideration Conviction-weighted votes, needed as a percent of the total supply needed for an approval.
+Lead-in Period - the initial proposal voting and discussion period. At this stage, proposals are in an undecided state until they pass some criteria for the given Track, including the Track having capacity, a minimum Prepare Period having passed, and a decision deposit having been paid.
+Decision Deposit - the minimum deposit amount required for a referendum to progress to the Decision Period after the end of the Lead-in Period. Its goal is to mitigate spam since each Track has a predefined capacity for concurrent referenda.
+Deciding Period - token holders continue to vote on the referendum. If a referendum does not pass by the end of the period, it will be rejected, and the Decision Deposit will be refunded.
+Enactment Period - a specified time, which is defined at the time the proposal was created, that an approved referendum waits before it can be dispatched. There is a minimum amount of time for each Track.
+
+How to Participate in Governance​
+Vara’s governance model is powered by a democratic model that factors in token holders’ votes, and gives them the ability to delegate voting power to community members in several ways. Proposals are submitted by the community, after which they will be discussed and voted upon by the community.
+Referenda can be proposed, discussed, and voted towards, using Vara’s governance forum: https://vara.polkassembly.io/gov-2
+Referenda are simple and inclusive. Stake-based voting schemes use votes from different organizations to make decisions in the shared ecosystem of a distributed ledger (i.e on-chain governance). Each referendum has a specific proposal that takes the form of a privileged function call, which can switch out the entire code of the runtime in the runtime, which would typically require a "hard fork" in legacy blockchain networks.
+Referenda can be initiated by following one of several ways. Publicly submitted proposals, proposals submitted by the fellowship, and proposals submitted as part of the enactment of a prior referendum. Referenda have a fixed time to lunch: 28 days. Proposals submitted as part of the enactment of a prior referendum can be set as desired.
+All referenda have an enactment delay associated with them. This delay is the period between the referenda ending and — assuming the proposal was approved — being enacted.
+Vara’s network members can start a referendum at any time. Referenda can be started as often as necessary and can last indefinitely. Several features, known as Origins and Tracks, help streamline the referenda flow.
+An Origin can be thought of as a rich descriptor for a given privilege level. The proposer of the referenda now selects an appropriate Origin for their request based on the proposal's requirements. Each Origin is associated with a single referendum class, and each type is related to a Track.
+The Track outlines the lifecycle of the proposal. It is independent of other proposal tracks, which allows the network to tailor the dynamics of referenda based on their implied privilege level. In the example, a runtime upgrade (set_code call) has different implications for the ecosystem than an approval of a treasury tip (reportAwesome call). Therefore different origins need to be established with separate predetermined turnouts, approvals, deposits, and minimum enactment periods.
+Proposing a Referendum​
+Vara aims to keep barriers to entry low and allows anyone to start a referendum at any time. Anyone may also vote on these referenda, and there are no limits to the number of referenda that are open and able to be voted on at any one time.
+In Gov2, the proposer is given the option to designate the specific Origin for their proposal's execution. Each Origin is linked to a distinct type of referendum class, with some classes having a single corresponding origin, while others consist of multiple Origins. Each class has its own Track, which serves as a pipeline for the proposal to progress through and is entirely separate from the tracks of other classes.
+Origin TrackDescriptionExamplesRootHighest privilegeRuntime upgrades, Technical Committee managementWhitelistedProposals to be whitelisted by the Technical Committee before getting dispatchedFast-tracked operationsGeneral AdminFor general on-chain decisionsChanges to XCM fees, Orbiter program, Staking parameters, RegistrarsEmergency CancellerFor cancellation of a referendum. Decision Deposit is refundedWrongly constructed referendumEmergency KillerFor killing of bad/malicious referendum. Decision Deposit is slashedMalicious referendum
+The existence of distinct tracks enables proposers to customize the characteristics of their referenda according to their associated privilege levels. Referenda executed from more influential Origins will be subject to stricter safety measures, higher voting thresholds, and longer periods of consideration. The Root Origin is subject to the most stringent safeguards and highest thresholds. Origins that confer relatively limited power, such as the Tip Origin, which has the ability to spend a small amount of VARA tokens from the treasury, will have correspondingly shorter consideration periods and lower approval thresholds.
+Upon creation, a referendum becomes immediately votable by any member of the community. However, it does not enter a state in which it can be concluded, have its votes tallied, approved, and subsequently enacted. Before transitioning into the Deciding period, referenda must satisfy certain requirements. Until these conditions are met, they remain unresolved. There are three primary conditions that must be fulfilled.
+Firstly, all referenda have a lead-in period, which is a predetermined duration that must elapse following the proposal before the deciding period can commence. This period serves as an initial notice period, during which votes can be cast, thus mitigating the possibility of "decision sniping." Such sniping could occur if an attacker with a significant proportion of voting power attempted to pass a proposal soon after its submission, thereby not allowing the broader voting population sufficient time to consider and vote.
+The second requirement is the availability of space for the referendum within its track, as each track has a maximum limit on the number of referenda that can be in the Deciding period simultaneously. The number of proposals allowed on a track is dependent on the privileges of the associated Origin, with more influential Origins resulting in a lower limit. For instance, the Root-level Origin has a limit of one, indicating that only a single high-risk proposal can be in the Deciding state at any given time. On the other hand, the relatively weak Tipping track has less stringent limits since overpopulation of referenda is less of a threat, and it generally makes more sense to have more tips being decided over at any given time. When there is available space, the eligible referendum with the most votes in favor of approval from its class is elevated to the Deciding state.
+The final requirement is the payment of a Decision Deposit, which serves to discourage frivolous proposals and prevent spamming or bloating of the system. Although the cost of creating a referendum is low and only covers the on-chain storage required to track it, having a referendum in the Deciding state poses greater risks and consumes limited system resources. To mitigate these risks and reserve space for more serious proposals, a larger deposit must be paid. By requiring a deposit, Vara aims to ensure that proposers carefully consider the potential impact of their proposals and contribute to a healthy decision-making environment.
+Voting and Voluntary Locking​
+Voluntary Locking allows token holders to increase their voting power by declaring how long they are willing to lock up their tokens. The number of votes for each token holder will be determined by the following formula:
+votes = tokens * conviction_multiplier
+The conviction multiplier increases the vote by one every time the number of lock periods doubles.
+Lock PeriodsVote MultiplierLength in Days00.10117221443288456165108326216
+The maximum number of "doublings" of the lock period is set to 6 (and thus 32 lock periods in total), and one lock period equals 7 days. Only doublings are allowed. You cannot lock for 24 periods and increase your conviction by 5.5.
+While a token is locked, you can still use it to vote and stake your tokens. You are only prevented from transferring these tokens to another account.
+Votes are always "counted" at the same time, which is at the end of the voting period. This is not impacted by the locking period of the tokens.
+Token holders can also delegate their voting power to another voter in the system. When votes are delegated in this way, the delegate votes with their own voting power, plus any delegated to them. This works with conviction voting, allowing VARA holders to lock up their tokens to increase your delegate's voting power on your behalf. Of course, the tokens in question never leave the delegator’s control, and they are free to switch delegates or regain direct control at any time.
+Current updates improve on this with a unique feature called Multirole Delegation. This allows you to specify a different delegate for every class of referendum in the system.
+The Referendum Lifecycle​
+Referenda are discrete events in the Vara Network with fixed voting periods. When the voting period ends, these votes are counted, tallied, and then chartered. These actions are separated from other init calls by using an identifier for each and can be executed if the vote is approved. With this binary nature comes simple voting options such as: aye (yes), nay (no), or abstaining entirely.
+When a proposal has been submitted, it will have a predetermined Lead-In Period, depending on its Track. At this stage, other token holders may vote towards it and lock up additional funds to demonstrate their conviction. Once this period has passed and the required criteria are met, the proposal progresses into the Deciding Period.
+
+The Proposal/Referendum Process within The Vara Network
+Once a proposal reaches the Deciding Period, it has the potential to be approved. However, this eligibility only lasts for 28 days, after which it will be rejected by default. To pass, a referendum must meet two criteria related to approval and support and must continue to meet these criteria for a specific Confirmation Period. Different referendum classes have varying Confirmation Period lengths, with more influential classes requiring a longer Confirmation Period. This serves as an additional safeguard against whale voters attempting to manipulate the voting process by placing a large enough vote to meet approval criteria unexpectedly.
+Approval is defined as the share of approval vote-weight (i.e. after adjustment for conviction) against the total number of vote-weight (for both approval and rejection). Support is the total number of votes in approval (i.e. ignoring any adjustment for conviction) compared to the total possible number of votes that could be made in the system. Each referendum class has different requirements for these values, and the requirements can reduce over time on a fixed schedule. This means that as voting progresses over the 28 days, the support and approval thresholds needed for a proposal to pass can decrease gradually. However, the thresholds will always start and end at similar levels, with at least 50% approval required.
+If a proposal fails to get approved within 28 days, it is automatically rejected, and the Decision Deposit can be refunded. However, if the proposal successfully meets the passing criteria and continues to do so for the Confirmation Period, it is approved and enters the Enactment Period, where it is scheduled to execute from its proposed origin after an Enactment Delay.
+The Enactment Delay, which is specified during proposal, has a minimum value based on the track. More powerful tracks require a longer Enactment Delay to give the network enough time to prepare for any potential changes introduced by the proposal.
+In addition, there is a unique operation called Cancelation for intervening with a proposal already being voted on. The process will immediately reject an ongoing referendum regardless of its status. There is also a provision to ensure the deposit of the proposer is slashed if the proposal is malicious or spam.
+Cancellation is a governance operation that must be voted upon by the network to be executed. The cancellation comes with its Origin and Track, which has a low lead-time and Approval/Support curves with slightly sharper reductions in their thresholds for passing, given that it is invoked with a sense of urgency.
+Vara Fellowship​
+Root-Origin proposals are necessary for system upgrades, fixes, and rescues, but they also have the potential to cause significant damage to the network and ecosystem. In Gov2, the approval and support required for early-passing are extremely high to ensure the safety of the system, and the lead-in and enactment periods are lengthy to provide adequate notice to all parties and prevent bad proposals from being approved. Although this process may be slow, it ensures maximum safety for everyone in the Vara network.
+However, there are times when it is crucial to implement a fix, upgrade, or rescue logic quickly. While there may be widespread agreement on the need for such action, the voting process's safeguards can make executing these changes challenging or impractical due to time constraints alone. In such cases, it can be helpful to oraclize expert opinions to make informed decisions and establish a clear, well-considered action plan on a tight timeline. Gov2 has a governing body called the "Fellowship" to oversee this process.
+The Fellowship is a self-governing body with the primary goal of protecting the interests of the Vara community and network participants. A rank is associated with each member so that an organization can determine how well-informed it expects its opinions to be about technical matters and whether those opinions are grounded in sound reasoning and in line with Vara's interests.
+The Fellowship is designed to have a broad membership with low barriers to entry. Becoming a candidate member of the Fellowship is as easy as placing a small deposit.
+Members of the Fellowship can vote on any given proposal, and the Fellowship considers their collective opinion weighted by their rank.
+Ranking System​
+To prevent a small group of participants from gaining effective control over the network, we adhere to three principles: firstly, the Fellowship must never have hard power over the network: it cannot change parameters, conduct rescues, or move assets. Concerning governance over the network, the only thing in its power is to reduce the effective timeline on which a referendum takes place.
+Secondly, the rank system and weights must be designed so that we would not expect small groups of individuals to be able to capture and control overall decision-making capacity. While the Fellowship weights those with higher rank more in the aggregate opinion, the weight should not be so high as to make a small number of higher members’ ideas impossible compared to a coherent thought from lower-ranked membership.
+Thirdly, the Fellowship should be designed to grow and develop its membership and aggregate levels of expertise and ensure that its overall decision-making capacity strengthens over time.
+In light of this, the Fellowship will have a constitution that describes in specific terms the requirements and expectations for individuals to attain and retain any given rank. Higher ranks can vote and promote lower ranks based on this constitution.
+To support these conditions, the Fellowship will have a constitution that outlines the requirements and expectations for individuals to attain and retain any given rank. Higher ranks are able to vote and promote lower ranks based on this constitution.
+Demotion happens automatically after a period in which a member cannot defend their position to their peers. Suspension can happen only through a general referendum, ensuring that controversy or unpopularity within the Fellowship does not (necessarily) result in expulsion. To guard against the chance of the Fellowship becoming a cabal, entrance into the top-tier ranks also requires a full referendum. It cannot be bestowed merely by one's Fellowship peer.
+Whitelisting​
+The Whitelist pallet has a singular purpose: to allow one Origin to escalate the privilege level of another Origin for a particular operation.
+The Fellowship authorizes an origin known as Whitelisted-Root to be executed with Root-level privileges and will only work with specific specified commands that the Fellowship has assigned. The Whitelist pallet verifies two things:
+
+The origin is the Whitelisted-Root, i.e. that the referendum passed on this track
+The Fellowship has indeed whitelisted the proposal.
+
+Only if both conditions are satisfied the operation executes with Root-level privileges. This system enables the ability to have a new parallel Track (Whitelisted-Root Origin), whose parameters allow for a shorter voting turnaround.
+In addition, a proposal may be blacklisted by Root origin. The blacklisted proposal and the associated referendum are immediately canceled. Also, the hash of this offer cannot reappear in the offer queue. The blacklist is useful in removing erroneous offers that may have been submitted with the same hash.Edit this pagePreviousValidator FAQsIntroductionGlossary TermsHow to Participate in GovernanceProposing a ReferendumVoting and Voluntary LockingThe Referendum LifecycleVara FellowshipRanking SystemWhitelisting
+
+
+
+
+
+
+
+
+Create account | Vara Network Documentation Portal
+window.dataLayer=window.dataLayer||[]
+!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-NH2N6VX",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")
+
+
+
+
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NH2N6VX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+
+!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())Skip to main contentReady to build on the edge of Web3? Join Vara online hackathon -  Gear upDocsVara-network.ioGear-tech.ioContributeGetting StartedAbout VaraVara Token EconomyAccountCreate accountPolkadot VaultBuilding Smart ContractsStakingGovernanceAccountCreate accountOn this pageCreate accountA Substrate account enables connection to applications across Polkadot, Kusama and their Parachains. There are several ways to generate a Substrate account described in this article, depending on whether you are using a desktop or a mobile device.
+The Vara Network is Substrate-based, which means that any keypair compatible with the sr25519 will also work on Vara.
+Key information and security​
+For most users, the use of popular and reliable wallets will be enough.
+If you need to create a cold wallet for storing funds, then you should pay attention to Polkadot Vault (previously Parity Signer). In the future we will also add Ledger support.
+There are two key features that make up an account - an address and a key (keypair):
+
+An address is the public aspect of the account. This is essentially a location that you can send transactions to and from.
+A key is the private part of the account. This is what enables you to access the address.
+
+The only way to access your account is via your private key (using the seed (or mnemonic) phrase or your account's JSON file and a password).
+Storing your key safely​
+Your seed phrase is the key to your account. If you lose access to your account, by changing the device, forgetting the password, or losing the JSON file, you can restore your account by using the seed. This also means that someone else can have access to your account if they also have access to your seed.
+We recommend that you store your seed in secure places like encrypted hard drives, non-digital devices or ideally, paper. We also recommend that you take other safety precautions to prevent this copy from physical damage, for example fire and water, and make multiple copies stored in different locations.
+You should never store your seed on a device that is, or ever will be, connected to the internet.
+Storing your accounts JSON file​
+Your account's JSON file is encrypted with a password. This means that while you can import into any wallet, you will need to use the password to do so successfully. As there is this additional layer of security - a password - you don't have to be as cautious about securing it. However, it's worth using highly secure passwords that are not used for anything else. It would be best if you made a note of this password offline.
+Via SubWallet​
+SubWallet is the comprehensive non-custodial wallet solution for Polkadot, Substrate & Ethereum ecosystems. With the mission of bringing users closer to Web3, SubWallet's vision is to become a Web3 multiverse gateway through which users can enjoy multichain services with utmost ease and absolute security. Connecting and using blockchain-based applications is smoother than ever with SubWallet Browser Extension & SubWallet Mobile App.
+
+
+Install SubWallet extension & mobile app here.
+
+
+Open SubWallet by clicking on the logo in the browser menu bar.
+
+
+Click the Create new account button:
+
+
+
+
+Create a master password and click Continue.
+
+noteSubWallet cannot help you restore the password once it is lost as the wallet is non-custodial. You can recover your account using the seed if you forget your master password.
+
+
+Keep your seed phrase in a safe place and never disclose it to anyone. After you have saved it, click I have kept it somewhere safe to move on.
+
+
+
+Congratulations, your wallet has been successfully created!
+
+
+Via Talisman​
+Talisman is a popular non-custodial wallet for creating and managing Substrate accounts. Being connected to Web3 applications across various networks, Talisman browser extension allows to store, send and receive assets. The Talisman browser extension is one of the easiest and secure ways of creating a Substrate account.
+
+
+Install Talisman extension for your browser here
+
+
+Open the extension by clicking on the logo in the menu bar.
+
+
+In the opened application, click "New wallet":
+
+
+
+
+Enter a strong password:
+
+
+And that's it. Your wallet has been created:
+
+Note!Don't forget to save your seed phrase by clicking the Backup Now button. If you will skip this step, you can do it later from Settings.
+Via Polkadot.js browser extension​
+The polkadot.js browser extension is the original application created by Parity Technologies for managing Substate accounts. This method involves installing the polkadot.js plugin and using it as a "virtual vault" that's separate from your browser to store your private keys and sign transactions.
+
+You can install the extension via the following links.
+
+Install on Chromium-based browser.
+Install on FireFox.
+
+
+Open the extension by clicking on the logo in the menu bar
+
+
+Click the large plus button to create a new account. Alternatively, you can navigate to the smaller plus icon in the top right and select "Create New Account".
+
+
+
+
+Save the seed phrase in a safe place using the security advices at the beginning of this article.
+
+
+
+Specify the name of your account and a strong password for making transactions. Click "Add the account with the generated seed".
+
+
+noteThe password that you choose here will be used to encrypt this account's information. You will need to re-enter it when attempting to process any kind of outgoing transaction, or when using it to cryptographically sign a message. This password is stored locally on the browser extension.
+You've now successfully created a new account using the polkadot.js browser extension.
+Via mobile app​
+If you need access to your accounts on a mobile device, then you can use the following mobile wallets for the Polkadot/Kusama ecosystem:
+
+
+All supported wallets you can check here.
+Via console​
+If you have Gear or Vara node installed, you can generate a new seed phrase using the command:
+./gear key generate --network vara
+And then import the generated seed phrase into any convenient wallet.
+How to get your address in the Vara Network format​
+Skip these steps if you have an account created via Polkadot.js browser extension
+Install Polkadot browser extension from here: https://polkadot.js.org/extension/ and import your account via Seed prase or JSON file.
+Go to https://polkadot.js.org/apps, allow this web application to interact with Polkadot extension in the prompt window.
+
+
+To see your account in the Vara Network format, just go to https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.vara-network.io#/accounts.
+The address will be shown in the Vara format (with kG… or kD… prefix). Copy the address if you want to share it with someone.
+
+
+Frequently Asked Questions​
+Is this account portable?​
+
+Yes, you can access your account on a different device or wallet of your choice as long as you have the account's seed
+phrase or JSON file associated with the account.
+
+Can I transact directly in the polkadot.js browser extension?​
+
+There isn't functionality to make transactions directly in the polkadot.js browser extension.
+To make transactions, you need to launch Gear Idea on your browser.
+Before you can make any transactions, you have to allow Gear Idea to access your account.
+The browser extension is what holds your account information. You choose which websites get to access this information.
+
+Does vara support hard wallets?​
+
+Yes! At the moment Vara supports Parity Signer. Also in the future we will support Ledger.
+
+How to get your address in the Vara Network format?​
+
+The Vara address prefix is 137. To see your account in the Vara Network format, just go to https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.vara-network.io#/accounts
+Edit this pagePreviousVara Token EconomyNextPolkadot VaultKey information and securityStoring your key safelyStoring your accounts JSON fileVia SubWalletVia TalismanVia Polkadot.js browser extensionVia mobile appVia consoleHow to get your address in the Vara Network formatFrequently Asked Questions
+
+
+
+
+
+
+
+
+Polkadot Vault (formerly Parity Signer) | Vara Network Documentation Portal
+window.dataLayer=window.dataLayer||[]
+!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-NH2N6VX",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")
+
+
+
+
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NH2N6VX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+
+!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())Skip to main contentReady to build on the edge of Web3? Join Vara online hackathon -  Gear upDocsVara-network.ioGear-tech.ioContributeGetting StartedAbout VaraVara Token EconomyAccountCreate accountPolkadot VaultBuilding Smart ContractsStakingGovernanceAccountPolkadot VaultOn this pageVara cold storage via Polkadot Vault (formerly Parity Signer)
+Polkadot Vault allows you to turn any mobile device based on Android or iOS into a real cold wallet. Your private keys are kept secure offline at all times and transactions are signed in an air-gapped way via QR-codes. A huge advantage is the completely open and transparent source code of the product.
+Vara Network completely supports working with Polkadot Vault.
+Installation​
+There are several ways to get the Polkadot Vault.
+Download from the application store for your device:
+ 
+Download directly from the GitHub:
+https://github.com/paritytech/parity-signer/releases
+Create your keys​
+infoOnce Polkadot Vault is installed, your device should never go online. You must turn off or even physically remove the smartphone's Wifi, Mobile Network, and Bluetooth to ensure that the mobile phone containing these accounts will not be exposed to any online threat. Switching to airplane mode suffices in many cases.
+
+
+Go offline, open your Polkadot Vault application, accept Privacy Policy, create your PIN code.
+
+
+Click the New seed button to generate and store your private keys. Backup your seed phrase on paper or try other reliable methods.
+
+
+Add Vara Network​
+To sign messages/transactions, and transfer funds to and from Vara account you need to add Vara Network into the app.
+
+
+Open your Polkadot Vault and tap the scan button
+
+
+Go to Metadata Portal, switch to Chain Specs tab
+
+
+Scan the spec QR code with your device to add Vara network.
+
+
+After spec scanning you can select Vara Network for your account:
+
+Add network Metadata​
+To sign and broadcast your transaction, we will also need the metadata of the given network. Polkadot Vault can be easily updated with the latest blockchain metadata while staying offline.
+
+To get the latest blockchain metadata:
+
+
+Open your Polkadot Vault and select tab scan
+
+
+Again go to Metadata Portal
+
+
+In the Metadata tab, scan video QR with metadata frames. Wait for Parsing multipart data is completed.
+
+
+infoScanning QR with metadata could take some time. Remember to update the Polkadot Vault to the latest version of metadata, you will need to do the scan again. We generate new QR's with each runtime upgrade of the network.
+When all metadata is uploaded, Polkadot Vault will be ready to work with the Vara Network.
+How to use​
+Polkadot Vault allows you to sign transactions using an air-gapped way. You scan a QR code with details about your transaction, then generate a code already signed on your offline device and deliver it as confirmation. Many applications support this feature.
+SubWallet​
+
+
+
+For instructions on how to use Polkadot Vault with SubWallet Extension, see here.
+
+
+For instructions on how to use Polkadot Vault with SubWallet Mobile, see here.
+
+
+For visual instructions, see the video here.
+
+
+Nova Wallet​
+Nova Wallet also supports Polkadot Vault. More details are here.
+Polkadot.{js}​
+To import your hard wallet account into Polkadot.js:
+
+You should go to Accounts section and click the from QR button.
+
+
+
+In the Polkadot Vault app, select your account and network.
+
+
+
+Show your code to the camera.
+
+Done! Now, when making transactions from this account, you will sign them with your Polkadot Vault app using QR codes.
+Polkadot.{js} extension​
+
+In your Polkadot.{js} extension allow QR camera access
+
+
+
+Click + to import new account and choose Attach external QR-signer account option:
+
+
+
+Show your account QR-code to the camera. Done!
+Edit this pagePreviousCreate accountNextBuilding Smart ContractsInstallationCreate your keysAdd Vara NetworkAdd network MetadataHow to useSubWalletNova WalletPolkadot.{js}Polkadot.{js} extension
+
+
+
+
+
+
+
+
+Validator FAQs | Vara Network Documentation Portal
+window.dataLayer=window.dataLayer||[]
+!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-NH2N6VX",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")
+
+
+
+
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NH2N6VX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+
+!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())Skip to main contentReady to build on the edge of Web3? Join Vara online hackathon -  Gear upDocsVara-network.ioGear-tech.ioContributeGetting StartedAbout VaraVara Token EconomyAccountBuilding Smart ContractsStakingStaking OverviewBecome NominatorBecome ValidatorValidator FAQsGovernanceStakingValidator FAQsOn this pageVara Validator FAQs
+Here is a list of frequently asked questions about running a Vara validator node.
+What is Vara Network?​
+Vara Network is a fast and scalable Layer-1 decentralized network powered by Gear Protocol.
+Links:
+
+Official site: https://vara-network.io/
+Block Explorer: https://explorer.vara-network.io/
+Vara Wiki: https://wiki.vara-network.io/
+Node Telemetry: https://telemetry.rs/
+Tokenomics: https://wiki.vara-network.io/docs/tokenomics/
+Whitepaper: https://whitepaper.gear-tech.io/
+Gear Wiki: https://wiki.gear-tech.io/
+Gear Foundation: https://gear.foundation/
+
+What are the public RPC endpoints?​
+
+
+RPC Node:
+
+wss://rpc.vara-network.io
+
+
+
+Archive RPC Node:
+
+wss://archive-rpc.vara-network.io
+
+
+
+What bootnode should I use to connect to the network?​
+Here are addresses of official Vara bootnodes:
+
+/dns4/vara-connect-1.vara-network.io/tcp/30333/ws/p2p/12D3KooWLDpZ5sWtSmZtiHXBstoQVwMAZ5yRWpDUBdjQHV7vBLHy
+/dns4/vara-connect-2.vara-network.io/tcp/30333/ws/p2p/12D3KooWCJas1xGRDUC8nnSvfSiC1RcTXWaAef6oom1vGvqUMZV7
+
+infoThese nodes are already included in the Vara chain spec, which will be used by default when you start your node with --chain vara
+What is the block time of the Vara Network?​
+It is operating at a rate of one block every 3 seconds.
+How long does an era last?​
+12 hours.
+An era is a period during which a specific set of active validators exists. Each era has six epochs (or sessions). During the last epoch, the active set of the next era is elected. And after the end of each era, the rewards are calculated and are ready to be distributed to the validators and nominators.
+How long does an epoch / a session last?​
+2 hours.
+What is the total issuance of $VARA?​
+10 Billion.
+What is the precision of the $VARA token?​
+12 decimals.
+What is a validator in Vara Network?​
+Validators are essential contributors to a successful blockchain network. When chosen to be part of a validator set, they help produce blocks and receive rewards for their investments in the platform.
+A validator node is required to be responsive, perform its expected duties in a timely manner, and avoid any slashable behavior.
+How to run a validator node?​
+Please follow this guide to get started: Run Vara Validator.
+What are the hardware requirements to run a validator node?​
+
+OS: Ubuntu 20.04 or later, Amazon Linux 2 or later
+CPU: 4vCPUs @ 3.4GHz; (it coud be Intel Ice Lake, Xeon or Core series, even AMD Zen3)
+Memory: 16GB RAM
+Storage: minimum 160GB SSD storage. Should be increased as the blockchain grows.
+
+You can find related information on our wiki page: Run Vara Validator > Hardware requirements
+Where do I download the node binary?​
+Navigate to https://get.gear.rs/ and download the most recent stable release.
+You can also get it from github release page: https://github.com/gear-tech/gear/releases/
+How fast should I upgrade node binary?​
+All nodes must upgrade to the latest version within 12 hours of its release if it is labeled “critical” or “high” priority and 24 hours if it is labeled “medium” or “low” priority.
+Is there official docker image?​
+Yes, you can pull the latest image from GitHub Container Registry
+docker pull ghcr.io/gear-tech/node:latest
+or find more tags here: https://github.com/gear-tech/gear/pkgs/container/node
+How do I check if my node is validator or not?​
+Navigate to https://polkadot.js.org/apps/?rpc=wss://rpc.vara-network.io#/staking, and you will find a list of the active validators
+What is slashing?​
+Slashing is a mechanism to punish validators who act maliciously or negligently. If a validator tries to corrupt the network or is offline too often, a part of their staked fund (and those of their nominators) can be slashed.
+What can lead to a validator's stake being slashed?​
+Your validator node can be slashed under the following scenarios:
+
+
+Equivocation: This occurs when a validator signs two or more blocks at the same height on the same chain. It's a serious offense because it can lead to the creation of two different versions of the blockchain, a situation known as a fork.
+
+
+Unresponsiveness: Validators are expected to be online and participate in the network consensus. If a validator is offline for an extended period and misses a certain number of votes, a portion of their stake can be slashed. This is generally considered a minor offense, and the slashing is less severe than for equivocation or producing invalid blocks.
+
+
+Invalid Block: Validators are expected to validate blocks correctly. If a validator produces a block that the network deems invalid, it can result in slashing. Note that it's unlikely to produce an invalid block unless you are running a modified node binary, therefore it's recommended to always download the binary from the official release page.
+
+
+How is the liveness slashing penalty calculated?​
+If a single validator is offline there’s no obvious reason to suspect malicious intent. The validator is not slashed, which means they also keep all their nominations. They are chilled. In practice, the protocol considers it problematic when 10% of the validator set is offline—that’s when slashing conditions kick in.
+
+The penalty starts relatively small, 0.021% slashed if 10% are offline. But penalties increase linearly from there until the maximum penalty of 7% is hit when 44% of the network is offline.
+How is the equivocation / double-sign slashing penalty calculated?​
+Validators may run their nodes on multiple machines to make sure they can still perform validation work in case one of their nodes goes down, but validator operators should be extremely careful in setting these up. If they do not have good coordination to manage signing machines, equivocation is possible, and equivocation offenses are slashed at much higher rates than equivalent offline offenses.
+
+GRANDPA equivocation has the harshest slashing penalty of all offenses, and it also exemplifies slashing based on the threat to the network—if 33% or more of the validator set commits a GRANDPA equivocation, the offenders lose 100% of their stake.
+How to stop validating?​
+If you wish to remain a validator or nominator (e.g. you're only stopping for planned downtime or server maintenance), submitting the chill extrinsic in the staking pallet should suffice. It is only if you wish to unbond funds or reap an account that you should continue with the following.
+To ensure a smooth stop to validation, make sure you should do the following actions:
+
+Chill your validator
+Purge validator session keys
+Unbond your tokens
+
+These can all be done with PolkadotJS Apps interface or with extrinsics.
+How long does it take to unbond tokens?​
+The unbonding duration is 14 era, i.e. 7 days.
+What is the max number of nominators I can have?​
+For each validator only the 256 biggest nominators can claim their reward. If you have more than 256 nominators, it is called oversubscription. Nominators should generally avoid nominating oversubscribed validators.
+Can I run multiple validators?​
+Yes, you can run multiple validators in Vara Network. Each validator will need its own separate stash and controller keys, as well as enough staked fund (either self-staked or nominated by others) to be in the active validator set.
+Running multiple validators can increase your chances of earning rewards, but it also increases your responsibilities and potential risk of slashing. Remember, each validator node requires maintenance, a stable internet connection, and a secure setup to prevent downtime and malicious attacks.
+It's important to note that running multiple validators doesn't mean running multiple nodes on the same server or under the same network conditions. This could lead to simultaneous failures, which could result in multiple nodes being slashed at the same time. Ideally, each validator node should be run on separate servers and potentially in different geographic locations for redundancy and resilience.
+How to achieve high availability for my validator node?​
+To maintain high availability for your validator node, it may seem tempting to use redundant validator setups. However, incorrect setups can be risky because validator session keys should be confined to one node. Duplication across nodes may cause equivocation slashes, leading to the loss of all staked funds.
+Fortunately, a validator doesn't require constant uptime, as there's some tolerance within eras for offline periods and upgrades, and the slashing penalties due to downtime are much less severe than that caused by equivocation.
+Therefore, only attempt a high availability set-up when you know what you're doing.
+How do I monitor my node?​
+
+Telemetry This tracks your node details including the version you are running, block height, CPU & memory usage, block propagation time, etc.
+
+infoAdd --telemetry-url "wss://telemetry.rs/submit 1" to the node startup parameter, then your node will show up on the telemetry dashboard.
+
+Prometheus-based monitoring stack, including Grafana for dashboards and log aggregation. It includes alerting, querying, visualization, and monitoring features and works for both cloud and on-premise systems.
+
+infoYou need to specify the prometheus port, for example --prometheus-port 9615, then the node metrics will be available at http://127.0.0.1:9615/metrics.
+What is the expected uptime from validators?​
+Ideally, a validator node should strive for 100% uptime to avoid any penalties and to perform its duties on the network effectively. In practice 99.5% uptime is considered safe, i.e. you should keep the daily average downtime within 15 minutes.
+What is the minimum bond requirement for a validator?​
+The minimum self-stake required is 100k VARA.
+Note that the actual amount of staked token (self-stake plus nominations) required to become a validator may be significantly higher due to competition from other validators.
+What is the least staking amount required for a validator to be elected?​
+The total amount of token that needs to be staked for a validator to be elected (self-stake plus nominations) is determined by the amount staked on other validators. If there are more validators who have a higher total stake, those validators will be chosen instead.
+You can get the details by running the subquery/tutorials-validator-threshold indexer on Vara Network.
+How often are staking rewards distributed?​
+Staking rewards are distributed at the end of each era, i.e., every 12 hours.
+How are staking rewards calculated?​
+Rewards for validators and nominators are computed per era (an era is a period of 12 hours) based on era points. An era point is a reward point earned by a validator for performing certain actions such as producing a block.
+The total reward pool for an era is split between validators (and their nominators) proportionally to the number of era points they have earned. The more era points a validator earns, the larger the portion of the reward pool they (and their nominators) receive.
+The validator's own reward is then calculated based on their commission, which is a percentage of the total reward that they take before distributing the rest to their nominators. Nominators' rewards are distributed based on the amount of fund they have staked.
+How should I decide the commission rate?​
+The commission is the percentage of rewards you keep before they are given out to nominators. With 0% commission, nominators get all the rewards; with 100% commission, they get NO rewards.
+In general, in order to stay attractive to nominators you should keep the commission low. However, you also need to ensure that the commission rate you set allows you to sustainably operate your validator node. It's a balance of competitive positioning, sustainability, and profitability.
+How many validators will there be in each era?​
+The ideal number of active validators is defined by the staking.validatorsCount storage item, and is subject to change in the future.
+You can query the storage item by visiting PolkadotJS Apps > Developer > Chain state > staking > validatorCount
+
+In each era, if there are more validators than the ideal threshold, the inactive validators will stay in the waiting list until they are elected.
+What files should I backup before migrating the validator node to another machine?​
+It is recommended to have backups of the following files and directories in case your current node becomes inaccessible due to extreme conditions:
+
+
+Validator Session Keys: If you are running a validator node, please backup the secret seeds of your session keys for minimal downtime migration. These files are located in the ~/.local/share/gear/chains/vara_network/keystore directory. You must submit an extrinsic to replace the keys if they are leaked or lost.
+
+
+Network Key(optional): The network key uniquely identifies your node in the peer-to-peer network. It is located at ~/.local/share/gear/chains/vara_network/network/secret_ed25519. If this file is lost, a new peer identity will be randomly generated when the node starts.
+
+
+Blockchain Database(optional): The blockchain database resides in the ~/.local/share/gear/chains/vara_network/db directory. It can be deleted and synchronized from scratch at any time, but keep in mind that this process may take some time.
+
+
+infoPlease make sure the old node is stopped before you launch the new node, otherwise replicating session keys across multiple nodes may lead to equivocation slashes.Edit this pagePreviousBecome ValidatorNextGovernanceWhat is Vara Network?What are the public RPC endpoints?What bootnode should I use to connect to the network?What is the block time of the Vara Network?How long does an era last?How long does an epoch / a session last?What is the total issuance of $VARA?What is the precision of the $VARA token?What is a validator in Vara Network?How to run a validator node?What are the hardware requirements to run a validator node?Where do I download the node binary?How fast should I upgrade node binary?Is there official docker image?How do I check if my node is validator or not?What is slashing?What can lead to a validator's stake being slashed?How is the liveness slashing penalty calculated?How is the equivocation / double-sign slashing penalty calculated?How to stop validating?How long does it take to unbond tokens?What is the max number of nominators I can have?Can I run multiple validators?How to achieve high availability for my validator node?How do I monitor my node?What is the expected uptime from validators?What is the minimum bond requirement for a validator?What is the least staking amount required for a validator to be elected?How often are staking rewards distributed?How are staking rewards calculated?How should I decide the commission rate?How many validators will there be in each era?What files should I backup before migrating the validator node to another machine?
+
+
+
+
+
+
+
+
+Vara Token Economy | Vara Network Documentation Portal
+window.dataLayer=window.dataLayer||[]
+!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-NH2N6VX",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")
+
+
+
+
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NH2N6VX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+
+!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())Skip to main contentReady to build on the edge of Web3? Join Vara online hackathon -  Gear upDocsVara-network.ioGear-tech.ioContributeGetting StartedAbout VaraVara Token EconomyAccountBuilding Smart ContractsStakingGovernanceVara Token EconomyOn this pageVARA Token Utility & Crypto Economics
+This article covers Vara Network's crypto-economics, highlighting key components, features, and the core utility of VARA. It also discusses measures taken to balance incentives and ensure ecosystem stability.
+VARA Utility & Token Distribution​
+Total Token Supply: 10 Billions VARA
+
+The vesting periods for the initial mint of VARA tokens are as follows:
+
+Founders/Team/Advisors - Fully locked for 12 months, then 36 months linear vesting (no lump-sum unlock).
+Investors - Fully locked for 12 months, then 12 months linear vesting (no lump-sum unlock).
+
+VARA tokens maintain core utility features required for the network to operate: transaction fees, staking and network security, and governance.
+All transfers of the gas token or interactions with smart contracts on the network require VARA, including developers deploying smart contracts. Developers can also pre-fund their smart contracts with gas for future execution using Gas Pools. This enables one of Vara Network’s exciting features — self-executing smart contracts.
+VARA tokens also play a crucial role in the consensus model of the Vara Network, where token holders help contribute to network security by staking their VARA tokens in exchange for a portion of the block reward.
+Incentives on the Vara Network have been carefully aligned to encourage the continued engagement of participants and support decentralization. Typically, most protocols award the entire network rewards (block rewards, tx fees, etc.) to the nodes who were selected to produce the latest block, with some protocols diverting a portion of these funds to a protocol treasury. This model is straightforward, reliable, and battle-tested. However, there is potential room to unlock additional token utility for growing decentralized ecosystems and create value for all stakeholders; Contributors to the Gear protocol are exploring the mechanics of how to distribute a portion of block rewards directly toward dApp developers in order to incentivize the creation of world-class dApps on the network. Subject to a governance decision, an automatic or semi-automatic rewards distribution program could be employed, where, for example, a part of block rewards and/or the tx fees go to the dApp developers, or optionally to stakers who support those dApps.
+With this model, a portion of VARA block rewards and/or the transaction fees in each block or epoch would go directly to dApp developers. The size of this reward could be based on several possible on-chain and off-chain metrics, like transaction volume, user activity, total gas spend, and total value locked. These rewards could also be allocated to dApps to, for example, fund their own gas pool used to subsidize transaction fees for end-users.
+Rewarding developers is an important principle that may ultimately help build a stronger ecosystem for all participants — however, it is crucial that any new reward mechanism be thoroughly tested. Therefore, there are different implementations of automated developer reward systems (as well as mechanics of developer contribution validation ) that might be considered by contributors to the Vara Network for maximum security and efficiency. Final mechanics are subject to governance voting before being rolled out in several phases.
+According to initial research, by including developers and dApps within the network’s core incentive and rewards mechanisms, Vara Network could:
+
+Enable transparent rewards for developer's efforts in building and deploying dApps.
+Provide  additional funding for developers and an opportunity for projects to bootstrap their projects’ own continued development by increasing user activity, thereby including them into the value chain by default on a base layer level.
+Support the flexibility for dApps to use the rewards however they see fit to benefit their users and ecosystem (For example, by using them for developer incentives, community airdrops, or staking these funds to help operate a dedicated node, etc.) This allows for new business models, as well as adding extra points of engagement for dApps and their target audience.
+Create a value capture and distribution flywheel for VARA token consumption, and could also stimulate base protocol token accumulation within the hands of stakeholders who are inherently interested in base network development.
+
+Community members participating in the Vara Network will have the opportunity to vote on the exact implementation for developer incentives.
+VARA Inflation and Anti-inflation Mechanics​
+Excessive inflation is one of the most criticized features of Layer 1/Layer 2 projects due to the impact it can have on financial sustainability and the community. Overly high inflation for a protocol’s token may cause:
+
+A concentration of token ownership, i.e. the accumulation of large shares of supply by team members and early investors by staking their locked allocations
+Excessive token liquidation pressure
+Rising ecosystem rates, forcing dApps to over-inflate incentive programs
+
+These factors become even more critical when market conditions are subject to increased turbulence, thus less liquidity and demand.
+Vara is designed such that protocol rewards would not affect network decentralization or concentration through periods of changes in liquidity. At the same time, the protocol must sufficiently reward stakers for contributing to network security. To achieve this, several mechanics were implemented to offset inflationary pressure and protect the development of the protocol and VARA token:
+
+
+The maximum inflation rate for year 1 is 6.00%. VARA has been designed with a decreasing inflation rate in mind. Below is a sample inflation rate schedule, however, the exact rates will be determined by governance voting:
+Year since genesisInflation rateYear 16.00%Year 25.50%Year 35.00%Year 44.75%Year 5 - onwardsgradual decrease to the minimum level of 3-4%
+
+
+Limit the amount of stakeable tokens to decrease the annual inflation rate.
+Team and investor locked tokens are not stakeable until they are vested (this helps by reducing the potential inflation by more than 50% in the first 12 months and, more importantly, protecting against any increase in the centralization of token ownership)
+
+
+An Inflation Offsetting Pool to reduce TTS Inflation to 0% for the first 24+ months. 10% of Total Token Supply (TTS) is allocated to a separate pool (the Inflation Offsetting Pool) to offset the increase of TTS caused by token emission from block rewards. Tokens from this pool are set to be automatically sent to a zero address (or “burned”) proportionally to the number of minted inflationary tokens. this will remain in effect unless otherwise allocated by the community for other funding initiatives (e.g. for developer grants/rewards pool), as voted upon and changed by the community.
+About ⅓  of the Foundation’s staking rewards will replenish the Inflation Offsetting Pool, with the remaining 2/3 going to fund Foundation operations and further protocol initiatives and development. Staking rewards received by Developer grants and Education/Bootcamp programs/PR/Events pools are going to fund the respective pools activities.
+
+
+Provide in-market staking incentives over time as the market continues to mature.
+The Vara Network maintains the Ideal Staking Rate by incentivizing or disincentivizing staking. Any downside divergence from the ideal staking rate will result in a higher ROI for stakers, providing a greater incentive to stake until the ideal stake rate has been achieved. Inversely, a staking rate higher than the ideal staking rate would yield a diluted return for stakers, encouraging token holders to unstake.
+The Ideal Staking Rate on Vara is 85%. Based on preliminary research provided by community enthusiasts and observations of the other L1/L2 protocols, we expect the Ideal Staking Rate to decrease 75% within 12 months since the PoS launch (subject to governance voting)  before settling around 50-67%. This would allow the protocol to align the staking rate and inflation levels with the circulating supply growth.
+
+
+These measures have the capacity to allow for maintenance of the same total token supply within the next 24+ months and, with the entire ecosystem in a more mature development stage, maintain an inflation rate in the low single-digits thereafter.
+
+To encourage system flexibility, the community could choose to initiate a governance proposal to decide whether:
+
+The Inflation Offsetting Pool allocation should be kept in full to continue offsetting TTS inflation,
+or 25-100% of this allocation should be moved to the developer grants pool
+
+In addition, the DAO will also decide on switching to the treasury fueling model where up to 10% of the total block rewards go to the protocol treasury in order to fuel further protocol development.
+Based on early research, the ideal time to implement these changes would be roughly 12-24 months from genesis. The implementation will be determined by the community via governance vote.
+Block Reward Curve, Staking Rate, and ROI Models​
+Vara was designed with a decreasing annual inflation model in mind, instead of a flat predetermined inflation rate. This may be implemented by governance vote and aims to prevent an excess of tokens being minted that would be out of line with ecosystem growth, mitigating inflation and preventing token holders from becoming unnecessarily diluted.
+Staking ROI is driven by both the staking rate (the percentage of stakeable tokens staked) and the block rewards curve. The block rewards curve effectively represents the total protocol inflation with hardcoded Minimum Inflation (constant = 1%) and Maximum inflation. The Maximum Inflation level decreases (see above) as the Network and the Ecosystem mature.
+Vara uses Polkadot’s standard inflation model to calculate the distribution of block rewards, with several key modifications:
+
+
+Staking rate:
+infoStaking Rate = number of tokens staked / number of stakeable tokensNumber of stakeable tokens = TTS - Locked Team tokens - Locked Investors tokens  - Inflation offsetting pool tokens
+At Genesis the stakeable tokens amount to 48.5% of TTS. This initially allows the protocol to have 51.5% less inflation while providing competitive market rates for staking ROI. While tokens are getting unlocked and/or expended, the number of stakeable tokens trends towards the TTS.
+The proven and battle-tested block reward curve and ROI model implemented by Polkadot also supports the Vara network to incentivize token holders to maintain the Ideal Staking Rate.
+Within the first 24 months, the Ideal Staking Rate will be decreased from 85% to 50-67% level (subject to governance voting as mentioned above), in line with token vesting unlocks and depending on the Foundation’s spending schedules/overall ecosystem development.
+
+
+Variable inflation rate
+Effective inflation of total token supply is a variable, not a constant, in the developed model. To calculate the total amount of tokens issued as block rewards, each block uses the block rewards curve instead of a fixed percentage. This is a divergence from Polkadot’s model, where a fixed inflation rate is minted before being divided between stakers and the Foundation treasury.
+Instead, the network mints only the number of tokens actually required to reward participation by validators in the network. In this model, Polkadot’s inflation model is used to determine the actual number of tokens minted, by aligning this with the Staking ratio. Another difference from the Polkadot model is the staking ROI cap: in case the staking ratio is significantly lower than the Ideal Staking Rate and ROI increases above a certain level, the surplus ROI surplus will be distributed to the treasury.
+This enables Vara to issue only the amount of new tokens required to reward the percentage of stakeable tokens that were staked, so that the absolute inflation level is aligned with the participation of token holders staking to the network.
+
+
+Block rewards curve
+
+To form the Block rewards curve, the following rates are used:
+The minimum inflation rate: constant  1% each year in case Staking rate = 0%
+The maximum Inflation rate, which is constant for 12 months.
+The max inflation rate will then be decreased as the network and the ecosystem mature (subject to governance vote as described above).
+From Minimum to Maximum inflation rates (i.e from 0% tokens staked to Ideal Staking Rate), the Block rewards curve grows gradually according to a linear equation (as in the standard Polkadot model).
+In case the % of tokens staked > Ideal Staking Rate, the curve decreases to the Minimum inflation level according to a hyperbolic equation (as in the standard Polkadot model).
+
+
+
+The staking ROI curve is driven by the block rewards curve and % of tokens staked: Block rewards curve / % of stakeable tokens staked. It decreases hyperbolically until the Ideal Staking Rate is reached and then falls hyperbolically in case % of the tokens staked increases beyond the Ideal Staking Rate.
+A maximum ROI of 30% has been implemented - if the staking rate falls below the Ideal Staking Rate, stakers receive a higher ROI than they would at the Ideal Staking Rate. Any staking rewards surplus on top of the 30% ROI cap goes to the Vara treasury.Edit this pagePreviousDeveloping on VaraNextCreate accountVARA Utility & Token DistributionVARA Inflation and Anti-inflation MechanicsBlock Reward Curve, Staking Rate, and ROI Models
+
+
+
+
+
+
+
+
+Governance | Vara Network Documentation Portal
+window.dataLayer=window.dataLayer||[]
+!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-NH2N6VX",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")
+
+
+
+
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NH2N6VX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+
+!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())Skip to main contentReady to build on the edge of Web3? Join Vara online hackathon -  Gear upDocsVara-network.ioGear-tech.ioContributeGetting StartedAbout VaraVara Token EconomyAccountBuilding Smart ContractsStakingGovernanceGovernanceOn this pageGovernanceIntroduction​
+Vara empowers its community to decide the evolution of the network through its on-chain governance mechanism. In the interests of decentralization, longevity and flexibility, Vara leverages the widely-adopted OpenGov framework as its native governance model. This allows any VARA token holder to participate in Vara’s decentralized governance to help determine any future updates or modifications to the network.
+The goal is to ensure that Vara Network stakeholders are represented, led, and engaged in decision-making processes to collaboratively decide the direction of the network. To accomplish this, Vara establishes a clear mandate and set of values to ensure orderly discussion and execution of decisions. At its most fundamental level, Vara’s governance model ensures that stakeholders controlling at least 50% of all funds staked to the network are able to direct its future — assuming they have enough conviction in their position.
+Glossary Terms​
+
+Conviction - The amount of “weight” a vote carries. This is calculated using the number of tokens locked into a vote, plus the user-defined period of time tokens should be locked for. The longer this lock-in period, the greater conviction a vote will carry.
+Proposal - an action or item proposed by a token holder, which is open for voting and discussion by all token holders. This is tied to a specific change to the Vara network, including values for key parameters, code upgrades, or changes to the governance system itself.
+Referendum (plural: referenda) -  a proposal that has met the proposal criteria and entered from the Lead-In period to the Deciding Period. It remains open for token-holder voting for the defined time, before being checked against referendum criteria and entering the Enactment period if successful.
+Origin - a set of permissions that define the source for an operation, which is used to determine the Track that a referendum is posted under.
+Track - an Origin-specific pipeline that outlines the life cycle of proposals. Currently, there are several Tracks available, including Root, Whitelisted, General Admin, Emergency Canceller, and Emergency Killer.
+Fellowship - a group of community members who have special voting rights within the Gear protocol and can add certain proposals to the Whitelisted Track.
+Approval - the minimum "Aye" votes as a percentage of overall Conviction-weighted votes needed for an approval.
+Support - the minimum number of "Aye" votes, not taking into consideration Conviction-weighted votes, needed as a percent of the total supply needed for an approval.
+Lead-in Period - the initial proposal voting and discussion period. At this stage, proposals are in an undecided state until they pass some criteria for the given Track, including the Track having capacity, a minimum Prepare Period having passed, and a decision deposit having been paid.
+Decision Deposit - the minimum deposit amount required for a referendum to progress to the Decision Period after the end of the Lead-in Period. Its goal is to mitigate spam since each Track has a predefined capacity for concurrent referenda.
+Deciding Period - token holders continue to vote on the referendum. If a referendum does not pass by the end of the period, it will be rejected, and the Decision Deposit will be refunded.
+Enactment Period - a specified time, which is defined at the time the proposal was created, that an approved referendum waits before it can be dispatched. There is a minimum amount of time for each Track.
+
+How to Participate in Governance​
+Vara’s governance model is powered by a democratic model that factors in token holders’ votes, and gives them the ability to delegate voting power to community members in several ways. Proposals are submitted by the community, after which they will be discussed and voted upon by the community.
+Referenda can be proposed, discussed, and voted towards, using Vara’s governance forum: https://vara.polkassembly.io/gov-2
+Referenda are simple and inclusive. Stake-based voting schemes use votes from different organizations to make decisions in the shared ecosystem of a distributed ledger (i.e on-chain governance). Each referendum has a specific proposal that takes the form of a privileged function call, which can switch out the entire code of the runtime in the runtime, which would typically require a "hard fork" in legacy blockchain networks.
+Referenda can be initiated by following one of several ways. Publicly submitted proposals, proposals submitted by the fellowship, and proposals submitted as part of the enactment of a prior referendum. Referenda have a fixed time to lunch: 28 days. Proposals submitted as part of the enactment of a prior referendum can be set as desired.
+All referenda have an enactment delay associated with them. This delay is the period between the referenda ending and — assuming the proposal was approved — being enacted.
+Vara’s network members can start a referendum at any time. Referenda can be started as often as necessary and can last indefinitely. Several features, known as Origins and Tracks, help streamline the referenda flow.
+An Origin can be thought of as a rich descriptor for a given privilege level. The proposer of the referenda now selects an appropriate Origin for their request based on the proposal's requirements. Each Origin is associated with a single referendum class, and each type is related to a Track.
+The Track outlines the lifecycle of the proposal. It is independent of other proposal tracks, which allows the network to tailor the dynamics of referenda based on their implied privilege level. In the example, a runtime upgrade (set_code call) has different implications for the ecosystem than an approval of a treasury tip (reportAwesome call). Therefore different origins need to be established with separate predetermined turnouts, approvals, deposits, and minimum enactment periods.
+Proposing a Referendum​
+Vara aims to keep barriers to entry low and allows anyone to start a referendum at any time. Anyone may also vote on these referenda, and there are no limits to the number of referenda that are open and able to be voted on at any one time.
+In Gov2, the proposer is given the option to designate the specific Origin for their proposal's execution. Each Origin is linked to a distinct type of referendum class, with some classes having a single corresponding origin, while others consist of multiple Origins. Each class has its own Track, which serves as a pipeline for the proposal to progress through and is entirely separate from the tracks of other classes.
+Origin TrackDescriptionExamplesRootHighest privilegeRuntime upgrades, Technical Committee managementWhitelistedProposals to be whitelisted by the Technical Committee before getting dispatchedFast-tracked operationsGeneral AdminFor general on-chain decisionsChanges to XCM fees, Orbiter program, Staking parameters, RegistrarsEmergency CancellerFor cancellation of a referendum. Decision Deposit is refundedWrongly constructed referendumEmergency KillerFor killing of bad/malicious referendum. Decision Deposit is slashedMalicious referendum
+The existence of distinct tracks enables proposers to customize the characteristics of their referenda according to their associated privilege levels. Referenda executed from more influential Origins will be subject to stricter safety measures, higher voting thresholds, and longer periods of consideration. The Root Origin is subject to the most stringent safeguards and highest thresholds. Origins that confer relatively limited power, such as the Tip Origin, which has the ability to spend a small amount of VARA tokens from the treasury, will have correspondingly shorter consideration periods and lower approval thresholds.
+Upon creation, a referendum becomes immediately votable by any member of the community. However, it does not enter a state in which it can be concluded, have its votes tallied, approved, and subsequently enacted. Before transitioning into the Deciding period, referenda must satisfy certain requirements. Until these conditions are met, they remain unresolved. There are three primary conditions that must be fulfilled.
+Firstly, all referenda have a lead-in period, which is a predetermined duration that must elapse following the proposal before the deciding period can commence. This period serves as an initial notice period, during which votes can be cast, thus mitigating the possibility of "decision sniping." Such sniping could occur if an attacker with a significant proportion of voting power attempted to pass a proposal soon after its submission, thereby not allowing the broader voting population sufficient time to consider and vote.
+The second requirement is the availability of space for the referendum within its track, as each track has a maximum limit on the number of referenda that can be in the Deciding period simultaneously. The number of proposals allowed on a track is dependent on the privileges of the associated Origin, with more influential Origins resulting in a lower limit. For instance, the Root-level Origin has a limit of one, indicating that only a single high-risk proposal can be in the Deciding state at any given time. On the other hand, the relatively weak Tipping track has less stringent limits since overpopulation of referenda is less of a threat, and it generally makes more sense to have more tips being decided over at any given time. When there is available space, the eligible referendum with the most votes in favor of approval from its class is elevated to the Deciding state.
+The final requirement is the payment of a Decision Deposit, which serves to discourage frivolous proposals and prevent spamming or bloating of the system. Although the cost of creating a referendum is low and only covers the on-chain storage required to track it, having a referendum in the Deciding state poses greater risks and consumes limited system resources. To mitigate these risks and reserve space for more serious proposals, a larger deposit must be paid. By requiring a deposit, Vara aims to ensure that proposers carefully consider the potential impact of their proposals and contribute to a healthy decision-making environment.
+Voting and Voluntary Locking​
+Voluntary Locking allows token holders to increase their voting power by declaring how long they are willing to lock up their tokens. The number of votes for each token holder will be determined by the following formula:
+votes = tokens * conviction_multiplier
+The conviction multiplier increases the vote by one every time the number of lock periods doubles.
+Lock PeriodsVote MultiplierLength in Days00.10117221443288456165108326216
+The maximum number of "doublings" of the lock period is set to 6 (and thus 32 lock periods in total), and one lock period equals 7 days. Only doublings are allowed. You cannot lock for 24 periods and increase your conviction by 5.5.
+While a token is locked, you can still use it to vote and stake your tokens. You are only prevented from transferring these tokens to another account.
+Votes are always "counted" at the same time, which is at the end of the voting period. This is not impacted by the locking period of the tokens.
+Token holders can also delegate their voting power to another voter in the system. When votes are delegated in this way, the delegate votes with their own voting power, plus any delegated to them. This works with conviction voting, allowing VARA holders to lock up their tokens to increase your delegate's voting power on your behalf. Of course, the tokens in question never leave the delegator’s control, and they are free to switch delegates or regain direct control at any time.
+Current updates improve on this with a unique feature called Multirole Delegation. This allows you to specify a different delegate for every class of referendum in the system.
+The Referendum Lifecycle​
+Referenda are discrete events in the Vara Network with fixed voting periods. When the voting period ends, these votes are counted, tallied, and then chartered. These actions are separated from other init calls by using an identifier for each and can be executed if the vote is approved. With this binary nature comes simple voting options such as: aye (yes), nay (no), or abstaining entirely.
+When a proposal has been submitted, it will have a predetermined Lead-In Period, depending on its Track. At this stage, other token holders may vote towards it and lock up additional funds to demonstrate their conviction. Once this period has passed and the required criteria are met, the proposal progresses into the Deciding Period.
+
+The Proposal/Referendum Process within The Vara Network
+Once a proposal reaches the Deciding Period, it has the potential to be approved. However, this eligibility only lasts for 28 days, after which it will be rejected by default. To pass, a referendum must meet two criteria related to approval and support and must continue to meet these criteria for a specific Confirmation Period. Different referendum classes have varying Confirmation Period lengths, with more influential classes requiring a longer Confirmation Period. This serves as an additional safeguard against whale voters attempting to manipulate the voting process by placing a large enough vote to meet approval criteria unexpectedly.
+Approval is defined as the share of approval vote-weight (i.e. after adjustment for conviction) against the total number of vote-weight (for both approval and rejection). Support is the total number of votes in approval (i.e. ignoring any adjustment for conviction) compared to the total possible number of votes that could be made in the system. Each referendum class has different requirements for these values, and the requirements can reduce over time on a fixed schedule. This means that as voting progresses over the 28 days, the support and approval thresholds needed for a proposal to pass can decrease gradually. However, the thresholds will always start and end at similar levels, with at least 50% approval required.
+If a proposal fails to get approved within 28 days, it is automatically rejected, and the Decision Deposit can be refunded. However, if the proposal successfully meets the passing criteria and continues to do so for the Confirmation Period, it is approved and enters the Enactment Period, where it is scheduled to execute from its proposed origin after an Enactment Delay.
+The Enactment Delay, which is specified during proposal, has a minimum value based on the track. More powerful tracks require a longer Enactment Delay to give the network enough time to prepare for any potential changes introduced by the proposal.
+In addition, there is a unique operation called Cancelation for intervening with a proposal already being voted on. The process will immediately reject an ongoing referendum regardless of its status. There is also a provision to ensure the deposit of the proposer is slashed if the proposal is malicious or spam.
+Cancellation is a governance operation that must be voted upon by the network to be executed. The cancellation comes with its Origin and Track, which has a low lead-time and Approval/Support curves with slightly sharper reductions in their thresholds for passing, given that it is invoked with a sense of urgency.
+Vara Fellowship​
+Root-Origin proposals are necessary for system upgrades, fixes, and rescues, but they also have the potential to cause significant damage to the network and ecosystem. In Gov2, the approval and support required for early-passing are extremely high to ensure the safety of the system, and the lead-in and enactment periods are lengthy to provide adequate notice to all parties and prevent bad proposals from being approved. Although this process may be slow, it ensures maximum safety for everyone in the Vara network.
+However, there are times when it is crucial to implement a fix, upgrade, or rescue logic quickly. While there may be widespread agreement on the need for such action, the voting process's safeguards can make executing these changes challenging or impractical due to time constraints alone. In such cases, it can be helpful to oraclize expert opinions to make informed decisions and establish a clear, well-considered action plan on a tight timeline. Gov2 has a governing body called the "Fellowship" to oversee this process.
+The Fellowship is a self-governing body with the primary goal of protecting the interests of the Vara community and network participants. A rank is associated with each member so that an organization can determine how well-informed it expects its opinions to be about technical matters and whether those opinions are grounded in sound reasoning and in line with Vara's interests.
+The Fellowship is designed to have a broad membership with low barriers to entry. Becoming a candidate member of the Fellowship is as easy as placing a small deposit.
+Members of the Fellowship can vote on any given proposal, and the Fellowship considers their collective opinion weighted by their rank.
+Ranking System​
+To prevent a small group of participants from gaining effective control over the network, we adhere to three principles: firstly, the Fellowship must never have hard power over the network: it cannot change parameters, conduct rescues, or move assets. Concerning governance over the network, the only thing in its power is to reduce the effective timeline on which a referendum takes place.
+Secondly, the rank system and weights must be designed so that we would not expect small groups of individuals to be able to capture and control overall decision-making capacity. While the Fellowship weights those with higher rank more in the aggregate opinion, the weight should not be so high as to make a small number of higher members’ ideas impossible compared to a coherent thought from lower-ranked membership.
+Thirdly, the Fellowship should be designed to grow and develop its membership and aggregate levels of expertise and ensure that its overall decision-making capacity strengthens over time.
+In light of this, the Fellowship will have a constitution that describes in specific terms the requirements and expectations for individuals to attain and retain any given rank. Higher ranks can vote and promote lower ranks based on this constitution.
+To support these conditions, the Fellowship will have a constitution that outlines the requirements and expectations for individuals to attain and retain any given rank. Higher ranks are able to vote and promote lower ranks based on this constitution.
+Demotion happens automatically after a period in which a member cannot defend their position to their peers. Suspension can happen only through a general referendum, ensuring that controversy or unpopularity within the Fellowship does not (necessarily) result in expulsion. To guard against the chance of the Fellowship becoming a cabal, entrance into the top-tier ranks also requires a full referendum. It cannot be bestowed merely by one's Fellowship peer.
+Whitelisting​
+The Whitelist pallet has a singular purpose: to allow one Origin to escalate the privilege level of another Origin for a particular operation.
+The Fellowship authorizes an origin known as Whitelisted-Root to be executed with Root-level privileges and will only work with specific specified commands that the Fellowship has assigned. The Whitelist pallet verifies two things:
+
+The origin is the Whitelisted-Root, i.e. that the referendum passed on this track
+The Fellowship has indeed whitelisted the proposal.
+
+Only if both conditions are satisfied the operation executes with Root-level privileges. This system enables the ability to have a new parallel Track (Whitelisted-Root Origin), whose parameters allow for a shorter voting turnaround.
+In addition, a proposal may be blacklisted by Root origin. The blacklisted proposal and the associated referendum are immediately canceled. Also, the hash of this offer cannot reappear in the offer queue. The blacklist is useful in removing erroneous offers that may have been submitted with the same hash.Edit this pagePreviousValidator FAQsIntroductionGlossary TermsHow to Participate in GovernanceProposing a ReferendumVoting and Voluntary LockingThe Referendum LifecycleVara FellowshipRanking SystemWhitelisting
+
+
+

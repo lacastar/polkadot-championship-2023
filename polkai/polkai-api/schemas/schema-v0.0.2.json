@@ -1,0 +1,36 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Vara onboard APIs",
+    "description": "REST API connecting Vara and Polkadot Blockchain to an AI system for processing and displaying on chain data. https://polkai-api.vercel.app/",
+    "version": "v0.0.1"
+  },
+  "servers": [
+    {
+      "url": "https://polkai-api.vercel.app/"
+    }
+  ],
+  "paths": {
+    "/api/serverless": {
+      "get": {
+        "description": "Retrieve the balance of an account.",
+        "operationId": "getBalance",
+        "parameters": [
+          {
+            "name": "address",
+            "in": "query",
+            "description": "Set the Vara blockchain public key/address. Allowed is a string which starts with a 'kG' prefix followed by exactly 47 alphanumeric characters",
+            "schema": {
+              "type": "string",
+              "pattern": "^kG[a-ZA-Z0-9]{47}$"
+            }
+          }
+        ],
+        "deprecated": false
+      }
+    }
+  },
+  "comments": {
+    "schemas": {}
+  }
+}

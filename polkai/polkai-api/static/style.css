@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.center-image {
+    max-width: 512px;
+    margin: 20px auto;
+    display: block;
+}
+
+.card {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card:hover {
+    background-color: #eaeaea;
+}
+
+.card h3 {
+    margin: 0;
+}
+
+.card p {
+    color: #555;
+}

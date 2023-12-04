@@ -1,0 +1,33 @@
+{
+  "name": "varai",
+  "version": "0.0.1",
+  "description": "GPT knowledge base extractor and transformer for Vara",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "OPENSSL_CONF=$HOME/share/openssl-1.1.1 node index.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lacastar/polkadot-championship-2023.git"
+  },
+  "keywords": [
+    "Polkadot",
+    "Vara",
+    "GPT",
+    "AI",
+    "ETL"
+  ],
+  "author": "lacastar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lacastar/polkadot-championship-2023/issues"
+  },
+  "homepage": "https://github.com/lacastar/polkadot-championship-2023#readme",
+  "dependencies": {
+    "badgetable": "^0.0.9",
+    "repos2doc": "^0.0.7",
+    "sitemap2docext": "^0.0.4",
+    "youtube-transcript": "^1.0.6"
+  }
+}
