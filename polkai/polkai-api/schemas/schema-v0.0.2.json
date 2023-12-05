@@ -39,6 +39,25 @@
         ],
         "deprecated": false
       }
+    },
+    "/api/chaininfo": {
+      "get": {
+        "description": "Retrieve about the chosen network.",
+        "operationId": "getChaininfo",
+        "parameters": [
+          {
+            "name": "network",
+            "in": "query",
+            "description": "Set the Vara network to use: main or test",
+            "schema": {
+              "type": "string",
+              "enum": [ "main", "test" ],
+              "default": "main"
+            }
+          }
+        ],
+        "deprecated": false
+      }
     }
   },
   "comments": {
