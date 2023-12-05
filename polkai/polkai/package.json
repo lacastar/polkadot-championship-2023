@@ -27,7 +27,7 @@
   "dependencies": {
     "badgetable": "^0.0.9",
     "repos2doc": "^0.0.7",
-    "sitemap2docext": "^0.0.4",
+    "sitemap2docext": "^0.0.5",
     "youtube-transcript": "^1.0.6"
   }
 }
