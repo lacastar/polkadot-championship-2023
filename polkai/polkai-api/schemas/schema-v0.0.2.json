@@ -11,18 +11,29 @@
     }
   ],
   "paths": {
-    "/api/serverless": {
+    "/api/balance": {
       "get": {
-        "description": "Retrieve the balance of an account.",
+        "description": "Retrieve the balance of an account on a given chain.",
         "operationId": "getBalance",
         "parameters": [
           {
             "name": "address",
             "in": "query",
             "description": "Set the Vara blockchain public key/address. Allowed is a string which starts with a 'kG' prefix followed by exactly 47 alphanumeric characters",
+            "required": true,
             "schema": {
               "type": "string",
               "pattern": "^kG[a-ZA-Z0-9]{47}$"
+            }
+          },
+          {
+            "name": "network",
+            "in": "query",
+            "description": "Set the Vara network to use: main or test",
+            "schema": {
+              "type": "string",
+              "enum": [ "main", "test" ],
+              "default": "main"
             }
           }
         ],
