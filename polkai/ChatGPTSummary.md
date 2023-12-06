@@ -1,4 +1,5 @@
-#Polkai
+# Polkai
+
 ## Project Overview
 
 CHE (Contextual Help Engine) aims to use a ChatGPT instance to provide information and support for the community about Polkadot and related technologies. Compared to search engines using an LLM based contextual agent is a great step up. It can not only speed up the traditional learning process of a new technology, but can give a helping hand taking the first steps by providing a completely new level of interactivity (calling interfaces, generating code, etc.).
